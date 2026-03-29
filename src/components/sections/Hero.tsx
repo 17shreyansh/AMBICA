@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Container } from '../ui/Container';
-import { fadeIn, slideUp } from '../../animations/variants';
+import { slideUp } from '../../animations/variants';
 
 export const Hero = () => {
   // Staggered animation for ultra-smooth sequential loading
