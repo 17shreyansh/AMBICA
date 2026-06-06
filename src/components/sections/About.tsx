@@ -55,7 +55,7 @@ export const About = () => {
               variants={itemVariant}
               className="text-base leading-relaxed text-primary-700 font-light mb-4 sm:mb-6"
             >
-              For over 15 years, AMBICA has been building and designing beautiful homes and offices. We are a trusted team that makes sure every room looks great and works perfectly for your daily life.
+              For over 30 years, AMBICA has been building and designing beautiful homes and offices. We are a trusted team that makes sure every room looks great and works perfectly for your daily life.
             </motion.p>
 
             <motion.p 
@@ -71,7 +71,7 @@ export const About = () => {
             >
               {[
                 { number: '500+', label: 'Completed Projects' },
-                { number: '15+', label: 'Years Experience' },
+                { number: '30+', label: 'Years Experience' },
                 { number: '98%', label: 'Happy Clients' }
               ].map((stat, index) => (
                 <div key={index} className="flex flex-col gap-1 sm:gap-2">

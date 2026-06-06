@@ -321,5 +321,19 @@ export const TESTIMONIALS: Testimonial[] = [
     role: 'Businessman',
     content: 'From the initial concept to the final execution, the AMBICA team demonstrated exceptional creativity and dedication. Our new space is a testament to their innovative approach and expertise.',
     rating: 5
+  },
+  {
+    id: '5',
+    name: 'Vaastu Consultancy',
+    role: 'Partner',
+    content: 'AMBICA perfectly integrates traditional Vaastu principles with modern architectural design. Working with their team ensures every project achieves both spiritual harmony and aesthetic brilliance.',
+    rating: 5
+  },
+  {
+    id: '6',
+    name: 'Architectural and Civil Engineering Consultants',
+    role: 'Engineering Partner',
+    content: 'Their commitment to structural integrity and innovative design is unmatched. AMBICA consistently delivers projects that meet the highest standards of safety, quality, and engineering excellence.',
+    rating: 5
   }
 ];
