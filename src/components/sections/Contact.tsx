@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Container } from '../ui/Container';
 import { Section } from '../ui/Section';
+import { Button } from '../ui/Button';
 import { slideUp, staggerContainer } from '../../animations/variants';
 
 export const Contact = () => {
@@ -114,12 +115,13 @@ export const Contact = () => {
                 />
               </div>
               
-              <button 
+              <Button 
                 type="submit" 
-                className="mt-2 sm:mt-4 w-full px-6 py-4 sm:px-8 sm:py-5 bg-stone-50 border border-stone-50 text-primary-900 font-sans text-[10px] sm:text-[11px] font-semibold tracking-[0.12em] sm:tracking-[0.15em] uppercase transition-all duration-300 hover:bg-transparent hover:text-stone-50"
+                variant="white"
+                className="mt-2 sm:mt-4 w-full py-4 sm:py-5"
               >
                 Send Message
-              </button>
+              </Button>
               
             </form>
           </motion.div>

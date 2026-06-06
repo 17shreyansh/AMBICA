@@ -12,6 +12,7 @@ export interface Project {
   category: string;
   description: string;
   image: string;
+  gallery?: string[];
   details: string;
   year: string;
 }

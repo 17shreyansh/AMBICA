@@ -41,7 +41,7 @@ export const Team = () => {
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
           variants={staggerContainer}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-6 sm:gap-x-8 gap-y-12 sm:gap-y-16"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-x-6 sm:gap-x-8 gap-y-12 sm:gap-y-16"
         >
           {TEAM.map((member) => (
             <motion.div key={member.id} variants={slideUp} className="group flex flex-col">

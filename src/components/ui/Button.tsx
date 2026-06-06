@@ -1,7 +1,7 @@
 import { ButtonHTMLAttributes } from 'react';
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: 'primary' | 'secondary' | 'outline';
+  variant?: 'primary' | 'secondary' | 'outline' | 'white-outline' | 'white';
   children: React.ReactNode;
 }
 
@@ -11,7 +11,9 @@ export const Button = ({ variant = 'primary', children, className = '', ...props
   const variants = {
     primary: 'bg-primary-900 text-stone-50 hover:bg-primary-800',
     secondary: 'bg-accent-600 text-stone-50 hover:bg-accent-700',
-    outline: 'border-2 border-primary-900 text-primary-900 hover:bg-primary-900 hover:text-stone-50'
+    outline: 'border border-primary-900 text-primary-900 hover:bg-primary-900 hover:text-stone-50',
+    'white-outline': 'border border-stone-50/30 text-stone-50 hover:bg-stone-50 hover:text-primary-900',
+    white: 'bg-stone-50 border border-stone-50 text-primary-900 hover:bg-transparent hover:text-stone-50'
   };
 
   return (

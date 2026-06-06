@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion';
 import { Container } from '../components/ui/Container';
-import { Section } from '../components/ui/Section';
 import { PROJECTS } from '../constants/data';
 import { slideUp } from '../animations/variants';
+import { ProjectSection } from '../components/sections/ProjectSection';
 
 export const Projects = () => {
   return (
@@ -24,44 +24,7 @@ export const Projects = () => {
       </section>
 
       {PROJECTS.map((project, index) => (
-        <Section key={project.id} className={index % 2 === 1 ? 'bg-stone-100' : 'bg-stone-50'}>
-          <Container>
-            <div className={`grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center`}>
-              <motion.div
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                variants={slideUp}
-                className={index % 2 === 1 ? 'lg:order-2' : ''}
-              >
-                <div className="text-xs sm:text-small font-sans tracking-wider mb-3 text-accent-600 uppercase font-semibold">
-                  {project.category} • {project.year}
-                </div>
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif mb-4 sm:mb-6 text-primary-900">{project.title}</h2>
-                <p className="text-base leading-relaxed text-primary-700 mb-4 sm:mb-6 font-light">
-                  {project.description}
-                </p>
-                <p className="text-base leading-relaxed text-primary-600 font-light">
-                  {project.details}
-                </p>
-              </motion.div>
-
-              <motion.div
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                variants={slideUp}
-                className={`h-[400px] sm:h-[500px] lg:h-[600px] overflow-hidden ${index % 2 === 1 ? 'lg:order-1' : ''}`}
-              >
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover"
-                />
-              </motion.div>
-            </div>
-          </Container>
-        </Section>
+        <ProjectSection key={project.id} project={project} index={index} />
       ))}
     </>
   );
