@@ -17,7 +17,7 @@ export const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen w-full flex items-center pt-16 sm:pt-20 bg-primary-900 overflow-hidden">
+    <section className="relative min-h-[85vh] sm:min-h-[90vh] lg:min-h-screen w-full flex flex-col justify-center pt-24 pb-12 sm:pt-32 sm:pb-20 lg:py-0 bg-primary-900 overflow-hidden">
       {/* Background Image */}
       <motion.div
         initial={{ scale: 1.05 }}
@@ -28,7 +28,7 @@ export const Hero = () => {
         <img
           src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1920&q=80"
           alt="Premium Architecture"
-          className="w-full h-full object-cover opacity-30 mix-blend-luminosity"
+          className="w-full h-full object-cover object-center opacity-30 mix-blend-luminosity"
         />
         <div className="absolute inset-0 bg-primary-900/40 z-10" />
       </motion.div>
@@ -50,7 +50,7 @@ export const Hero = () => {
 
             <motion.h1
               variants={slideUp}
-              className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-serif font-medium text-stone-50 leading-[1.05] tracking-tight mb-6 sm:mb-8"
+              className="text-5xl sm:text-5xl lg:text-6xl xl:text-7xl font-serif font-medium text-stone-50 leading-[1.1] sm:leading-[1.05] tracking-tight mb-6 sm:mb-8"
             >
               Building Dreams <br className="hidden sm:block" />
               <span className="italic text-stone-300 font-light">Into Reality.</span>
@@ -63,16 +63,16 @@ export const Hero = () => {
               Premium construction and interior design services that transform spaces into uncompromising architectural masterpieces.
             </motion.p>
 
-            <motion.div variants={slideUp} className="flex flex-col sm:flex-row flex-wrap gap-4 sm:gap-6">
+            <motion.div variants={slideUp} className="flex flex-col sm:flex-row flex-wrap gap-4 sm:gap-6 mt-4 sm:mt-0">
               <Link 
                 to="/projects"
-                className="inline-block text-center rounded-none bg-stone-50 text-primary-900 font-sans text-[10px] sm:text-[11px] font-semibold uppercase tracking-[0.12em] sm:tracking-[0.15em] px-8 sm:px-10 py-3 sm:py-4 hover:bg-stone-200 transition-colors duration-300 border-none"
+                className="w-full sm:w-auto inline-block text-center rounded-none bg-stone-50 text-primary-900 font-sans text-[10px] sm:text-[11px] font-semibold uppercase tracking-[0.12em] sm:tracking-[0.15em] px-8 sm:px-10 py-4 hover:bg-stone-200 transition-colors duration-300 border-none"
               >
                 Explore Projects
               </Link>
               <Link 
                 to="/contact"
-                className="inline-block text-center rounded-none border border-stone-50/30 text-stone-50 font-sans text-[10px] sm:text-[11px] font-semibold uppercase tracking-[0.12em] sm:tracking-[0.15em] px-8 sm:px-10 py-3 sm:py-4 hover:bg-stone-50 hover:text-primary-900 transition-colors duration-300"
+                className="w-full sm:w-auto inline-block text-center rounded-none border border-stone-50/30 text-stone-50 font-sans text-[10px] sm:text-[11px] font-semibold uppercase tracking-[0.12em] sm:tracking-[0.15em] px-8 sm:px-10 py-4 hover:bg-stone-50 hover:text-primary-900 transition-colors duration-300"
               >
                 Get in Touch
               </Link>

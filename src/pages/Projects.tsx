@@ -1,10 +1,22 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Container } from '../components/ui/Container';
 import { PROJECTS } from '../constants/data';
 import { slideUp } from '../animations/variants';
 import { ProjectSection } from '../components/sections/ProjectSection';
+import { Lightbox } from '../components/ui/Lightbox';
 
 export const Projects = () => {
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxImages, setLightboxImages] = useState<string[]>([]);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const openLightbox = (images: string[], index: number) => {
+    setLightboxImages(images);
+    setCurrentImageIndex(index);
+    setLightboxOpen(true);
+  };
+
   return (
     <>
       <section className="pt-24 sm:pt-28 lg:pt-32 pb-16 sm:pb-20 bg-primary-900 text-stone-50">
@@ -24,8 +36,20 @@ export const Projects = () => {
       </section>
 
       {PROJECTS.map((project, index) => (
-        <ProjectSection key={project.id} project={project} index={index} />
+        <ProjectSection 
+          key={project.id} 
+          project={project} 
+          index={index} 
+          openLightbox={openLightbox}
+        />
       ))}
+
+      <Lightbox 
+        isOpen={lightboxOpen}
+        images={lightboxImages}
+        initialIndex={currentImageIndex}
+        onClose={() => setLightboxOpen(false)}
+      />
     </>
   );
 };

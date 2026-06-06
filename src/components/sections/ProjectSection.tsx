@@ -7,10 +7,14 @@ import { Section } from '../ui/Section';
 interface ProjectSectionProps {
   project: Project;
   index: number;
+  openLightbox?: (images: string[], index: number) => void;
 }
 
-export const ProjectSection = ({ project, index }: ProjectSectionProps) => {
+export const ProjectSection = ({ project, index, openLightbox }: ProjectSectionProps) => {
   const isReversed = index % 2 === 1;
+
+  // Combine featured image and gallery into a single array for the Lightbox
+  const allImages = [project.image, ...(project.gallery || [])];
 
   return (
     <Section className={`py-16 sm:py-20 md:py-24 lg:py-32 ${isReversed ? 'bg-stone-100' : 'bg-stone-50'}`}>
@@ -49,7 +53,8 @@ export const ProjectSection = ({ project, index }: ProjectSectionProps) => {
               whileInView="visible"
               viewport={{ once: true, margin: "-100px" }}
               variants={slideUp}
-              className={`w-full h-[350px] sm:h-[450px] lg:h-[600px] overflow-hidden rounded-sm shadow-md group ${isReversed ? 'lg:order-1' : ''}`}
+              className={`w-full h-[350px] sm:h-[450px] lg:h-[600px] overflow-hidden rounded-sm shadow-md group cursor-pointer ${isReversed ? 'lg:order-1' : ''}`}
+              onClick={() => openLightbox && openLightbox(allImages, 0)}
             >
               <img
                 src={project.image}
@@ -68,10 +73,14 @@ export const ProjectSection = ({ project, index }: ProjectSectionProps) => {
               whileInView="visible"
               viewport={{ once: true, margin: "-100px" }}
               variants={slideUp}
-              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 w-full"
+              className="flex lg:grid lg:grid-cols-4 gap-4 sm:gap-6 w-full overflow-x-auto snap-x snap-mandatory pb-4 lg:pb-0 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
             >
               {project.gallery.slice(0, 4).map((img, i) => (
-                <div key={i} className="w-full h-[250px] sm:h-[200px] lg:h-[250px] overflow-hidden rounded-sm shadow-sm group">
+                <div 
+                  key={i} 
+                  className="shrink-0 snap-start w-[50vw] sm:w-[30vw] md:w-[22vw] lg:w-full h-[150px] sm:h-[180px] lg:h-[200px] overflow-hidden rounded-sm shadow-sm group cursor-pointer"
+                  onClick={() => openLightbox && openLightbox(allImages, i + 1)}
+                >
                   <img
                     src={img}
                     alt={`${project.title} gallery ${i + 1}`}

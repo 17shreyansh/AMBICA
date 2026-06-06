@@ -50,7 +50,7 @@ export const Header = () => {
             <img 
               src={logo} 
               alt="AMBICA" 
-              className="h-14 w-14 sm:h-16 sm:w-16 lg:h-20 lg:w-20 object-contain transition-transform duration-500 group-hover:scale-105" 
+              className="h-14 w-14 sm:h-16 sm:w-16 lg:h-20 lg:w-20 object-contain mix-blend-multiply transition-transform duration-500 group-hover:scale-105" 
             />
           </Link>
 

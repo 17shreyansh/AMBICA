@@ -65,17 +65,20 @@ export const ProjectsSlider = () => {
 
                 return (
                   <div key={project.id} className="min-w-full px-2 sm:px-4 lg:px-0">
-                    <div className="relative h-[400px] sm:h-[500px] md:h-[600px] lg:h-[700px] w-full group overflow-hidden bg-primary-200">
+                    <div className="flex flex-col md:block">
+                      <div className="relative h-[250px] sm:h-[400px] md:h-[600px] lg:h-[700px] w-full group overflow-hidden bg-primary-200">
+                        
+                        <img
+                          src={project.image}
+                          alt={project.title}
+                          className={`w-full h-full object-cover transition-transform duration-1000 ease-[cubic-bezier(0.25,1,0.5,1)] ${
+                            isActive ? 'scale-100' : 'scale-110'
+                          }`}
+                        />
+                        <div className="absolute inset-0 border border-primary-900/10 pointer-events-none" />
+                      </div>
                       
-                      <img
-                        src={project.image}
-                        alt={project.title}
-                        className={`w-full h-full object-cover transition-transform duration-1000 ease-[cubic-bezier(0.25,1,0.5,1)] ${
-                          isActive ? 'scale-100' : 'scale-110'
-                        }`}
-                      />
-                      
-                      <div className="absolute bottom-0 left-0 w-full md:w-auto md:max-w-xl bg-primary-900 p-6 sm:p-8 md:p-12 transition-transform duration-700 delay-300 ease-out">
+                      <div className="md:absolute md:bottom-0 md:left-0 w-full md:w-auto md:max-w-xl bg-primary-900 p-5 sm:p-8 md:p-12 transition-transform duration-700 delay-300 ease-out z-10 relative md:static -mt-4 md:mt-0 shadow-xl md:shadow-none">
                         <div className="font-sans text-[9px] sm:text-[10px] tracking-[0.15em] sm:tracking-[0.2em] uppercase text-accent-400 mb-3 sm:mb-4 font-semibold">
                           {project.category} &nbsp;—&nbsp; {project.year}
                         </div>
@@ -86,8 +89,6 @@ export const ProjectsSlider = () => {
                           {project.description}
                         </p>
                       </div>
-
-                      <div className="absolute inset-0 border border-primary-900/10 pointer-events-none" />
                     </div>
                   </div>
                 );

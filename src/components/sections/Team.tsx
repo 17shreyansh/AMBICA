@@ -44,13 +44,13 @@ export const Team = () => {
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-x-6 sm:gap-x-8 gap-y-12 sm:gap-y-16"
         >
           {TEAM.map((member) => (
-            <motion.div key={member.id} variants={slideUp} className="group flex flex-col">
+            <motion.div key={member.id} variants={slideUp} className="group flex flex-col w-full max-w-[280px] mx-auto sm:max-w-none">
               
-              <div className="relative overflow-hidden mb-5 sm:mb-6 h-[350px] sm:h-[400px] bg-primary-200">
+              <div className="relative overflow-hidden mb-5 sm:mb-6 h-[280px] sm:h-[350px] lg:h-[400px] bg-primary-200">
                 <img
                   src={member.image}
                   alt={member.name}
-                  className="w-full h-full object-cover grayscale transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:grayscale-0 group-hover:scale-105"
+                  className="w-full h-full object-cover object-top grayscale transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:grayscale-0 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 border border-primary-900/10 pointer-events-none" />
               </div>

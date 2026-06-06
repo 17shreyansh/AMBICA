@@ -89,7 +89,7 @@ export const Footer = () => {
           
           <div className="flex items-center gap-2">
             <span className="font-sans text-[9px] sm:text-[10px] tracking-[0.15em] sm:tracking-[0.2em] uppercase text-primary-600">
-              Crafted with love by
+              Developed By
             </span>
             <a 
               href="https://affobe.com/" 
